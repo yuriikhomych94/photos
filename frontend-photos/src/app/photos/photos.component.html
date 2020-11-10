@@ -1,0 +1,9 @@
+<div class="wrapper">
+    <div cdkDropList class="list" (cdkDropListDropped)="drop($event)" (click)="d()">
+        <div class="box" *ngFor="let image of images" cdkDrag>
+            <img [src]="image" alt="Images" class="img">
+        </div>
+        <input style="display: none" type="file" (change)="choosePhoto($event)" #fileInput>
+        <button (click)="fileInput.click()" class="choosePhoto">Select Photo</button>
+    </div>
+</div>
